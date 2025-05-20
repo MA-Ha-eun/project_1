@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개인프로젝트 p2</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+</head>
+
+<body class="bg-dark text-white" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+  <header>
+  <nav class="navbar navbar-expand-lg" data-bs-theme="dark" style="background-color: #ea406e;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="p1.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16" style="margin-right: 7px;">
+      <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+      </svg> CineFind
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white-70" href="p1.html">MAIN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" href="#" onclick="location.reload(); return false;">DETAILS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white-70" href="p3.html">ABOUT</a>
+        </li>
+      </ul>
+
+      <span class="nav-item fst-italic" style="color: black">
+        <a class="nav-link" href="p3.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+          <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+          </svg> Who made this?</a>
+      </span>
+    </div>
+  </div>
+  </nav>
+  </header>
+
+  <div class="container mt-5">
+    <h1 id="title" class="mb-5 fw-bold"></h1>
+
+    <div class="row g-5 align-items-start">
+      <div class="col-md-4">
+        <img id="poster" class="img-fluid mb-3" alt="Movie Poster">
+      </div>
+      <div class="col-md-8">
+        <p id="overview" class="mb-2" style="text-align: justify;"></p>
+        <p id="release" class="mb-2 text-white-50 fst-italic text-end"></p><br><br>
+        <div class="d-flex justify-content-start mb-2 fs-3">
+        <p id="vote" class="me-2" style="color: #ea406e;"></p>
+        <p id="votes" class="text-white-50"></p><br></div>
+      </div>
+
+  </div></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get("title");
+    const poster = params.get("poster");
+    const release = params.get("release");
+    const vote = params.get("vote");
+    const overview = params.get("overview");
+    const votes = params.get("votes");
+
+    document.getElementById("title").textContent = title;
+    document.getElementById("poster").src = `https://image.tmdb.org/t/p/w440_and_h660_face${poster}`;
+    document.getElementById("release").textContent = `Released on ${release}`;
+    document.getElementById("vote").innerHTML = `Audience Score &nbsp;&nbsp;|&nbsp;&nbsp; <strong>${vote}</strong>&nbsp;`;
+    document.getElementById("overview").textContent = `${overview}`;
+    document.getElementById("votes").textContent = `(${votes} votes)`;
+  </script>
+</body>
+</html>

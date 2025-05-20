@@ -3400,29 +3400,57 @@ const movieList = {
 console.log(movieList.results.length);
 console.log(movieList.results[199].title);
 
-const movieListElement = document.getElementById("list");
-movieListElement.innerHTML = ""
+
+
 
 document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    const inputTitle = document.getElementById("inputTitle").value;
-    const inputTitle2 = inputTitle.toLowerCase();
+    const inputTitle = document.getElementById("inputTitle").value.toLowerCase();
 
-    console.log(inputTitle2);
+    const movieListElement = document.getElementById("movieResults");
+    movieListElement.innerHTML = ""
+    document.getElementById("defaultPosters").style.display = "none";
 
-    for (let a = 0; a <= 199; a++) {
-      let b = movieList.results[a].title;
-      let b2 = b.toLowerCase();
-      if (b2.includes(inputTitle2)) {
-        const resultMovie = document.createElement("li"); // 카드로 바꾸기
-        resultMovie.classList.add("list-group-item");
-        resultMovie.innerHTML = `${b}`;
-        movieListElement.appendChild(resultMovie);
-        console.log("!");
-        return;
-      } else {
-        console.log("no");
+    let count = 0;
+
+    for (let a = 0; a < movieList.results.length; a++) {
+      let movie = movieList.results[a];
+      let title = movie.title.toLowerCase();
+
+      if (title.includes(inputTitle)) {
+        const col = document.createElement("div");
+        col.className = "col-md-4 mb-4";
+
+        const card = document.createElement("div");
+        card.className = "card h-100";
+        card.style.border = "none";
+        
+        card.innerHTML = `
+        <a href="p2.html?title=${encodeURIComponent(movie.title)}
+                        &poster=${movie.poster_path}
+                        &release=${movie.release_date}
+                        &vote=${movie.vote_average}
+                        &overview=${encodeURIComponent(movie.overview)}
+                        &votes=${movie.vote_count}" 
+                        style="text-decoration: none; color: inherit;">
+
+          <img src="https://image.tmdb.org/t/p/w440_and_h660_face${movie.poster_path}" class="card-img-top" alt="${movie.title}">
+          <div class="card-body">
+            <h4 class="card-title mb-2">${movie.title}</h4>
+            <p class="card-text mb-1">Release: ${movie.release_date}</p>
+            <p class="card-text">Audience: ${movie.vote_average}</p>
+          </div>
+        `;
+        
+        col.appendChild(card);
+        movieListElement.appendChild(col);
+        count++;
       }
     }
-})
+    
+    if (count === 0) {
+    movieListElement.innerHTML = `<p>No results found.</p>`;
+    }
+});
+
