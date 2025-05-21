@@ -2,12 +2,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>개인프로젝트 p2</title>
+  <title>DETAILS</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 </head>
 
 <body class="bg-dark text-white" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+
   <header>
   <nav class="navbar navbar-expand-lg" data-bs-theme="dark" style="background-color: #ea406e;">
   <div class="container-fluid">
@@ -32,7 +33,7 @@
         </li>
       </ul>
 
-      <span class="nav-item fst-italic" style="color: black">
+      <span class="nav-item fst-italic fw-semibold" style="color: black">
         <a class="nav-link" href="p3.html">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
           <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
@@ -43,7 +44,9 @@
   </nav>
   </header>
 
+  <section>
   <div class="container mt-5">
+
     <h1 id="title" class="mb-5 fw-bold"></h1>
 
     <div class="row g-5 align-items-start">
@@ -57,8 +60,10 @@
         <p id="vote" class="me-2" style="color: #ea406e;"></p>
         <p id="votes" class="text-white-50"></p><br></div>
       </div>
-
-  </div></div>
+    </div>
+  
+  </div>
+  </section>
 
   <script>
     const params = new URLSearchParams(window.location.search);
@@ -76,5 +81,6 @@
     document.getElementById("overview").textContent = `${overview}`;
     document.getElementById("votes").textContent = `(${votes} votes)`;
   </script>
+
 </body>
 </html>

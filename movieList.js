@@ -3422,7 +3422,7 @@ document.querySelector("form").addEventListener("submit", function(event) {
         card.style.border = "none";
         
         card.innerHTML = `
-        <a href="p2.html?title=${encodeURIComponent(movie.title)}
+          <a href="p2.html?title=${encodeURIComponent(movie.title)}
                         &poster=${movie.poster_path}
                         &release=${movie.release_date}
                         &vote=${movie.vote_average}
@@ -3445,6 +3445,6 @@ document.querySelector("form").addEventListener("submit", function(event) {
     }
     
     if (count === 0) {
-    movieListElement.innerHTML = `<p>No results found.</p>`;
+    movieListElement.innerHTML = `<p class="fs-4 text-center">Sorry, no results found.</p>`;
     }
 });
