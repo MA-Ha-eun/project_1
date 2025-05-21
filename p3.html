@@ -6,13 +6,21 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
+  <style>
+    .c1 {
+      font-size: 30px;
+      --myColor: #691d31;
+      background-color: var(--myColor);
+    }
+
+  </style>
 </head>
 
 <body class="bg-dark text-white" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
   <header>
   <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="p1.html">
+    <a class="navbar-brand fw-bold" href="p1.html">
       <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16" style="margin-right: 7px;">
       <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
       </svg> CineFind
@@ -44,22 +52,96 @@
   </nav>
   </header>
 
-  <div class="container mt-5" id="mypage">
-    <h1 class="mb-5 fw-bold">안녕하세요</h1>
+  <div class="container mt-5">
+    <h1 class="mb-5 fw-bold" id="sayhello" style="text-align: center;">Hello — thank you for visiting!</h1>
 
     <div class="row g-5 align-items-start">
       <div class="col-md-4">
-        <img src="" class="img-fluid mb-3" alt="pic" width="" height="">
+        <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="mySwiper" thumbs-swiper=".mySwiper2" loop="true" space-between="10" navigation="true">
+          <swiper-slide>
+          <img src="./myimage1.jpg" class="img-fluid" alt="pic" width="" height="" />
+          </swiper-slide>
+          <swiper-slide>
+          <img src="./myimage2.jpg" class="img-fluid" alt="pic" width="" height="" />
+          </swiper-slide>
+          <swiper-slide>
+          <img src="./myimage3.jpg" class="img-fluid" alt="pic" width="" height="" />
+          </swiper-slide>
+          <swiper-slide>
+          <img src="./myimage4.jpg" class="img-fluid" alt="pic" width="" height="" />
+          </swiper-slide>
+        </swiper-container>
+
+        <swiper-container class="mySwiper2" loop="true" space-between="7" slides-per-view="4" free-mode="true" watch-slides-progress="true">
+          <swiper-slide>
+          <img src="./myimage1.jpg" class="img-fluid" alt="pic" width="" height="" />
+          </swiper-slide>
+          <swiper-slide>
+          <img src="./myimage2.jpg" class="img-fluid" alt="pic" width="" height="" />
+          </swiper-slide>
+          <swiper-slide>
+          <img src="./myimage3.jpg" class="img-fluid" alt="pic" width="" height="" />
+          </swiper-slide>
+          <swiper-slide>
+          <img src="./myimage4.jpg" class="img-fluid" alt="pic" width="" height="" />
+          </swiper-slide>
+        </swiper-container>    
       </div>
+
       <div class="col-md-8">
-        <p>???</p>
-        <p id="release" class="mb-2 text-white-50 fst-italic text-end"></p><br><br>
-        <div class="d-flex justify-content-start mb-2 fs-3">
-        <p id="vote" class="me-2" style="color: #ea406e;"></p>
-        <p id="votes" class="text-white-50"></p><br></div>
+        <span class="c1">&nbsp;About Me&nbsp;</span>
+        <p class="mt-2" style="text-align: justify;">Hello, I’m MA Haeun(마하은), a beginner web developer currently learning the fundamentals of web technologies.
+          I’m focused on building simple and functional websites using HTML, CSS, and JavaScript.
+          I enjoy learning new tools and steadily improving through practice.</p><br>
+
+        <span class="c1">&nbsp;My Interests&nbsp;</span>
+        <p class="mt-2" style="text-align: justify;">I’m interested in how websites are built and the basic ideas that make them work.
+          I enjoy learning how different parts of a website come together, and I try to focus on writing clean and understandable code.
+          When I’m not coding, I explore other interests too — including a genuine love for cats.</p><br>
+        
+        <span class="c1">&nbsp;Skills (currently learning)&nbsp;</span>
+        <p class="mt-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+          </svg>&nbsp; HTML</p>
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+          </svg>&nbsp; CSS</p>
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+          <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+          </svg>&nbsp; JavaScript</p><br>
+
+        <span class="c1">&nbsp;Contact&nbsp;</span>
+        <p class="mt-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+          <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+          </svg>&nbsp; 1thecalla@gmail.com</p>
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+          </svg>&nbsp; <a href="https://github.com/MA-Ha-eun">GitHub</a></p>
+          </a>
+
       </div>
 
   </div></div>
   </div>
+
+  <div class="flair flair--3"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+  <script>
+  gsap.from("#sayhello", {
+    opacity: 0, 
+    y: 100, 
+    duration: 1
+  });
+
+  gsap.to(".c1", {"--myColor":"#ea406e", yoyo:true, repeat:30, duration: 2});
+  </script>
   </body>
   </html>

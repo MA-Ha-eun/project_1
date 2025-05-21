@@ -3397,11 +3397,6 @@ const movieList = {
 };
 
 
-console.log(movieList.results.length);
-console.log(movieList.results[199].title);
-
-
-
 
 document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault();
@@ -3437,7 +3432,7 @@ document.querySelector("form").addEventListener("submit", function(event) {
 
           <img src="https://image.tmdb.org/t/p/w440_and_h660_face${movie.poster_path}" class="card-img-top" alt="${movie.title}">
           <div class="card-body">
-            <h4 class="card-title mb-2">${movie.title}</h4>
+            <h4 class="card-title mb-2 fw-bold">${movie.title}</h4>
             <p class="card-text mb-1">Release: ${movie.release_date}</p>
             <p class="card-text">Audience: ${movie.vote_average}</p>
           </div>
@@ -3453,4 +3448,3 @@ document.querySelector("form").addEventListener("submit", function(event) {
     movieListElement.innerHTML = `<p>No results found.</p>`;
     }
 });
-
